@@ -1,19 +1,16 @@
 package Principal;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProjetoDB {
-
-    public static void main(String[] args) {
+public class Conexao {
+    public static void consultarClientes() {
         Connection conexao = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver"); 
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/Standard", "root", "root");
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/standard", "root", "root");
             ResultSet rsCliente = conexao.createStatement().executeQuery("SELECT * FROM CLIENTE");
             while (rsCliente.next()) {
                 System.out.println("Nome: " + rsCliente.getString("nome"));
