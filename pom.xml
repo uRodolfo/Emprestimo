@@ -19,5 +19,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>Principal.Main</exec.mainClass>
+        <!-- Adicionando a propriedade do nome do banco de dados -->
+        <database.name>Emprestimos</database.name>
     </properties>
 </project>
